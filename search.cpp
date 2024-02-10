@@ -8,7 +8,7 @@ int wyszukiwanie_liniowe(int t[], int size, int key) {
             return i;
         }
     }
-    return -1; // Zwróć -1, jeśli klucz nie został znaleziony
+    return -1; 
 }
 
 int wyszukiwanie_liniowe_z_wart(int t[], int size, int key) {
@@ -22,7 +22,7 @@ int wyszukiwanie_liniowe_z_wart(int t[], int size, int key) {
     if (i < size - 1 || t[size - 1] == key) {
         return i;
     }
-    return -1; // Zwróć -1, jeśli klucz nie został znaleziony
+    return -1; 
 }
 
 int wyszukiwanie_skokowe(int t[], int size, int key) {
@@ -32,19 +32,19 @@ int wyszukiwanie_skokowe(int t[], int size, int key) {
         prev = step;
         step += sqrt(size);
         if (prev >= size) {
-            return -1; // Zwróć -1, jeśli klucz nie został znaleziony
+            return -1; 
         }
     }
     while (t[prev] < key) {
         prev++;
         if (prev == std::min(step, size)) {
-            return -1; // Zwróć -1, jeśli klucz nie został znaleziony
+            return -1; 
         }
     }
     if (t[prev] == key) {
-        return prev; // Zwróć indeks, jeśli klucz został znaleziony
+        return prev; 
     }
-    return -1; // Zwróć -1, jeśli klucz nie został znaleziony
+    return -1; 
 }
 
 int wyszukiwanie_binarne(int t[], int size, int key) {
@@ -52,7 +52,7 @@ int wyszukiwanie_binarne(int t[], int size, int key) {
     while (left <= right) {
         int mid = left + (right - left) / 2;
         if (t[mid] == key) {
-            return mid; // Zwróć indeks, jeśli klucz został znaleziony
+            return mid; 
         }
         if (t[mid] < key) {
             left = mid + 1;
@@ -60,7 +60,7 @@ int wyszukiwanie_binarne(int t[], int size, int key) {
             right = mid - 1;
         }
     }
-    return -1; // Zwróć -1, jeśli klucz nie został znaleziony
+    return -1; 
 }
 
 int wyszukiwanie_interpolacyjne(int t[], int size, int key) {
@@ -68,13 +68,13 @@ int wyszukiwanie_interpolacyjne(int t[], int size, int key) {
     while (low <= high && key >= t[low] && key <= t[high]) {
         if (low == high) {
             if (t[low] == key) {
-                return low; // Zwróć indeks, jeśli klucz został znaleziony
+                return low; 
             }
-            return -1; // Zwróć -1, jeśli klucz nie został znaleziony
+            return -1; 
         }
         int pos = low + (((double)(high - low) / (t[high] - t[low])) * (key - t[low]));
         if (t[pos] == key) {
-            return pos; // Zwróć indeks, jeśli klucz został znaleziony
+            return pos; 
         }
         if (t[pos] < key) {
             low = pos + 1;
@@ -82,6 +82,6 @@ int wyszukiwanie_interpolacyjne(int t[], int size, int key) {
             high = pos - 1;
         }
     }
-    return -1; // Zwróć -1, jeśli klucz nie został znaleziony
+    return -1;
 }
 
