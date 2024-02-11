@@ -23,4 +23,4 @@ void sortowanie_przez_wstawianie (int tab[], int size, int tab_out[]);
 
  
  
-#endif // SORT_HPP
+#endif 
