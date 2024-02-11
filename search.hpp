@@ -7,5 +7,5 @@ int wyszukiwanie_skokowe(int t[], int size, int key);
 int wyszukiwanie_binarne(int t[], int size, int key);
 int wyszukiwanie_interpolacyjne(int t[], int size, int key);
 
-#endif // SEARCH_HPP
+#endif 
 
